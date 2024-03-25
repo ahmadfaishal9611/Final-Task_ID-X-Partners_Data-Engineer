@@ -8,7 +8,7 @@ BEGIN
 	SELECT 
 		CAST (TransactionDate AS DATE) AS Date,
 		COUNT(TransactionID) AS TotalTransactions,
-		SUM(Amount) AS TotalAmoount
+		SUM(Amount) AS TotalAmount
 	FROM dbo.FactTransaction
 	WHERE CAST (TransactionDate AS DATE) BETWEEN @start_date AND @end_date
 	GROUP BY CAST (TransactionDate AS DATE);
